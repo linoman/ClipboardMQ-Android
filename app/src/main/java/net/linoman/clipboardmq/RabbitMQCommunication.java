@@ -58,7 +58,7 @@ public class RabbitMQCommunication {
                         channel.exchangeDeclare(EXCHANGE_ID, EXCHANGE_TYPE);
 
                         AMQP.Queue.DeclareOk q = channel.queueDeclare();
-                        channel.queueBind(q.getQueue(), EXCHANGE_ID, ROUTING_KEY); //o varios
+                        channel.queueBind(q.getQueue(), EXCHANGE_ID, ROUTING_KEY);
                         channel.queueBind(q.getQueue(), EXCHANGE_ID, "cmq.linoman.android");
                         QueueingConsumer consumer = new QueueingConsumer(channel);
                         channel.basicConsume(q.getQueue(), true, consumer);

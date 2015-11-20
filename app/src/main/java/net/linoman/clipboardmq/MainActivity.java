@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
 		    public boolean handleMessage(Message msg) {
 			    ((ClipboardManager) getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(ClipData.newPlainText("ClipboardMQ Imported text", msg.getData().getString(RabbitMQCommunication.MESSAGE)));
 			    return false;
-		    }
+            }
 	    }));
 
 	    clipboardManager.addPrimaryClipChangedListener(new ClipboardManager.OnPrimaryClipChangedListener() {
